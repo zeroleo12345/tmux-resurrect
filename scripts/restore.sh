@@ -152,7 +152,7 @@ new_session() {
 	fi
 	# change first window number if necessary
 	local created_window_num="$(first_window_num)"
-	if [ $created_window_num -ne $window_number ]; then
+	if [[ $created_window_num -ne $window_number ]]; then
 		tmux move-window -s "${session_name}:${created_window_num}" -t "${session_name}:${window_number}"
 	fi
 }
